@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //async-await function always return a promise 
+        //We can make any function to async-await function
+        //we have to write a async keyword just before any function and that function will be converted in async function
+        //where await pause execution of it's surrounding async function until the promise is settled
+
+        function api(val)
+        {
+            return new Promise((resolve, reject)=>{
+               setTimeout(()=>{
+                console.log("Wheather Data ",val);
+                resolve(200);      //in api return 200 mean api is successful  loaded
+               },3000);
+            });
+        };
+        // async function getWheather()
+        // {
+        //     console.log("getting data 1......");
+        //     await api(1);
+        //     console.log("getting data 2......");
+        //     await api(2);
+        //     console.log("getting data 3......");
+        //     await api(3);
+        // }
+        // getWheather();
+
+
+        //using ifi function => we don't need to call the function it will itself run.
+       (async function()
+        {
+            console.log("getting data 1......");
+            await api(1);
+            console.log("getting data 2......");
+            await api(2);
+            console.log("getting data 3......");
+            await api(3);
+        })();
+      
+       
+    </script>
+</body>
+</html>
