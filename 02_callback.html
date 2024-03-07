@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  when a function is passed as an argument to some another function so that is called callback  -->
+        //  let's create a callback function
+        // function sum(a,b)
+        // {
+        //     console.log(a+b);
+        // }
+        // function calculator(a,b,callbacksum)
+        // {
+        //     callbacksum(a,b);
+        // }
+        // calculator(1,2,sum);
+                 //OR
+                 
+        function calculator(a,b,callbacksum)
+        {
+            callbacksum(a,b);
+        }
+        calculator(8,2,(a,b)=>
+        {
+            console.log(a+b);
+        });
+        //in the example of setTimeout we take function as a callbackfunction
+    </script>
+</body>
+</html>

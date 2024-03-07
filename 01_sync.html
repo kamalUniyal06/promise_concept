@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //you can see that each line of code is running one after another that's called the async behaviour of javascript
+    console.log("I am first");
+    console.log("I am second");
+    console.log("I am third");
+    let fun = ()=>
+    {
+        console.log("The value of val is:");
+    }
+    
+    setTimeout(fun,4000);
+</script>
+</html>

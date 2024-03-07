@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //nested callbacks are stacked below one another forming a pyramid structure
+        //hence also called (pyramid of doom)
+        // function getData(dataId)
+        // {
+        //     console.log("Data id is:"+dataId);
+        // }
+        // getData(5);
+
+        //now let's put setTimeout function to above code let get data one after another
+          function getData(dataId, getnextData, getnestTonextData)
+        {
+            setTimeout(()=>{
+
+                console.log("Data id is:"+dataId);
+                if(getnextData)
+                {
+                    getnextData();
+                }
+                if(getnestTonextData)
+                    {
+                        getnestTonextData();
+                    }
+            },2000);
+        }
+
+        //this below code is the callback hell condition where it is very hard to understand these line of code for a beigneer
+        getData(5, ()=>{
+                console.log("getting data 2.....");
+            getData(6,()=>{
+                console.log("getting data 3.....");
+            getData(7);
+    
+        });
+        });
+
+        //to resolve the issue of callback hell we have a very beautiful concept called promises
+    </script>
+</body>
+</html>
